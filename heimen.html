@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施設図面と動画マーカー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ <h1>施設紹介</h1>
+<body>
+
+<div class="map-container">
+    <img src="floorplan.jpg" alt="施設図面" class="facility-map">
+
+    <div class="marker" id="marker1" data-video-url="video.mov" style="top: 20%; left: 30%;"></div>
+    <div class="marker" id="marker2" data-video-url="video2.mp4" style="top: 50%; left: 70%;"></div>
+    <div class="marker" id="marker3" data-video-url="video3.mp4" style="top: 85%; left: 60%;"></div>
+    <div class="marker" id="marker4" data-video-url="video4.mp4" style="top: 55%; left: 15%;"></div>
+    <div class="marker" id="marker5" data-video-url="video5.mp4" style="top: 80%; left: 80%;"></div>
+</div></body>
+<div id="video-player-container" style="display: none;">
+    <video id="video-player" width="640" height="360" controls></video>
+    <button id="close-button">閉じる</button>
+</div>
+<script src="script.js"></script>
+
+</html>
