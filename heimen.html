@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <html>
- <head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
     <title>marker AR</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
-<body>
-    <a-scene>
-        <a-assets>
-            <video 
-                id="my-video" 
-                src="video2.mp4" 
-                autoplay
-                loop="true" 
-                playsinline
-                crossorigin="anonymous"
-                muted="true"
-            ></video>
-        </a-assets>
 
-        <a-plane 
-            src="#my-video" 
-            width="8" 
-            height="4.5" 
-            position="0 2.25 -5" 
-            rotation="0 0 0"
-        ></a-plane>
+  <body style="margin:0px; overflow:hidden;">
+    <a-scene embedded arjs>
+        <a-assets>
+           <img id="newImage" src="video2.mp4">
+        </a-assets>
 
-        <a-sky color="#111"></a-sky>
-        <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#333"></a-plane>
+              <a-marker preset="hiro">
+  
+    <a-image src="#newImage" position="0 0 -3.5" scale="1 -1 1" width="4" height="4"></a-image>
 
-    </a-scene>
-</body>
+    <a-text position="-0.5 1.5 0" value=" Welcome to " color="purple" width="5"></a-text>
+<a-text position="-0.5 1 0" value=" Sanotech " color="purple" width="5"></a-text>
+                         <a-text position="-0.5 0.5 0" value=" NIGHT " color="purple" width="5"></a-text>
+</a-marker>
+        
+                <a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
