@@ -1,101 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
-    <title>marker AR</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>marker AR - Video</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
 
-  <body style="margin:0px; overflow:hidden;">
-  <a-assets>
-   <video id="newVideo" src="video2.mp4" autoplay loop crossorigin="anonymous"></video>
-</a-assets>
+  <body style="margin:0px; overflow:hidden;">
+    <a-scene embedded arjs>
+        <a-assets>
+           <video id="newVideo" src="video2.mp4" autoplay loop crossorigin="anonymous"></video>
+        </a-assets>
 
-<a-marker preset="hiro">
-  <a-video src="#newVideo" position="0 0 0" width="4" height="2.25"></a-video> 
-  </a-marker>
-
-              <a-marker preset="hiro">
-  
-    <a-image src="#newImage" position="0 0 -3.5" scale="1 -1 1" width="4" height="4"></a-image>
-
-    
-</a-marker>
-        
-                <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+        <a-marker preset="hiro">
+            <a-video src="#newVideo" position="0 0 0" width="4" height="2.25"></a-video>
+            </a-marker>
+        
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+      // ユーザー操作なしでビデオ再生を開始するための設定（ブラウザの制限対策）
+      document.querySelector('a-scene').addEventListener('loaded', function () {
+        const video = document.getElementById('newVideo');
+        video.play().catch(e => {
+          console.log('ビデオの自動再生がブロックされました。ユーザー操作が必要です。', e);
+          // 必要であれば、ユーザーにタップを促すUIを表示
+        });
+      });
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
