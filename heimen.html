@@ -9,10 +9,13 @@
   </head>
 
   <body style="margin:0px; overflow:hidden;">
-    <a-scene embedded arjs>
-        <a-assets>
-           <img id="newImage" src="video2.mp4">
-        </a-assets>
+  <a-assets>
+   <video id="newVideo" src="video2.mp4" autoplay loop crossorigin="anonymous"></video>
+</a-assets>
+
+<a-marker preset="hiro">
+  <a-video src="#newVideo" position="0 0 0" width="4" height="2.25"></a-video> 
+  </a-marker>
 
               <a-marker preset="hiro">
   
@@ -25,6 +28,7 @@
     </a-scene>
   </body>
 </html>
+
 
 
 
