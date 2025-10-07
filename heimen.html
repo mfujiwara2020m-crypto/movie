@@ -1,95 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
-    <title>marker AR</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  </head>
-
-  <body style="margin:0px; overflow:hidden;">
-    <a-scene embedded arjs>
-        <a-assets>
-             <img id="myImage" src="original2.png">
-          
-        </a-assets>
-
-              <a-marker preset="hiro">
-    <a-image src="#myImage" position="0.5 -0.5 -2.5" scale="1 -1 1" width="1" height="1"></a-image> 
-   
-</a-marker>
-        
-                <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <title>marker AR - Video</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin:0px; overflow:hidden;">
+    <a-scene embedded arjs>
+        <a-assets>
+           <video id="newVideo" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+             <source src="video2.mp4" type="video/mp4">
+           </video>
+        </a-assets>
+        <a-marker preset="hiro">
+            <a-video src="#newVideo" position="0 0 0" width="4" height="2.25"></a-video>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+      document.querySelector('a-scene').addEventListener('loaded', function () {
+        const video = document.getElementById('newVideo');
+        video.play().catch(e => {
+          console.warn('ビデオの自動再生がブロックされました。');
+        });
+      });
+    </script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
